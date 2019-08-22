@@ -1,10 +1,10 @@
-public class Employee {
-    String name;
-    double baseSalary;
-    int employeeID;
-    Employee manager;
-    String currentStatus;
-    static int ID = 0;
+public abstract class Employee {
+    private String name;
+    private double baseSalary;
+    private int employeeID;
+    private Employee manager;
+
+    private static int ID = 0;
 
     public Employee(String name, double baseSalary) {
         this.name = name;
@@ -37,11 +37,10 @@ public class Employee {
     }
 
     public String toString() {
-        String str = employeeID + " " + name;
-        return str;
+        return employeeID + " " + name;
     }
 
     public String employeeStatus() {
-        return currentStatus;
+        return this.toString();
     }
 }
