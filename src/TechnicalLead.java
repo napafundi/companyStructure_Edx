@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class TechnicalLead extends TechnicalEmployee {
     public int headCount = 0;
+    public int checkIns = 0;
     public ArrayList<SoftwareEngineer> reports = new ArrayList<>();
     private static double salaryMultiplier = 1.3;
 
@@ -24,6 +25,7 @@ public class TechnicalLead extends TechnicalEmployee {
 
     public boolean approveCheckIn(SoftwareEngineer eng) {
         if (eng.getManager() == this && eng.getCodeAccess() == true) {
+            checkIns++;
             return true;
         }
         return false;
@@ -39,6 +41,14 @@ public class TechnicalLead extends TechnicalEmployee {
     }
 
     public String getTeamStatus() {
-
+        String str = super.employeeStatus() + " has " + checkIns + " check ins ";
+        if (reports.size() == 0) {
+            return str + " and no direct reports yet.";
+        }
+        str += " check ins and is managing:";
+        for (SoftwareEngineer employee: reports) {
+            str += "\n" + employee.employeeStatus() + " has " + employee.getSuccessfulCheckIns() + " successful check ins.";
+        }
+        return str;
     }
 }
