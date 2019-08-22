@@ -1,6 +1,6 @@
 public class Accountant extends BusinessEmployee {
 
-    private double bonusBudget;
+    public double bonusBudget;
     private TechnicalLead teamSupported;
 
     public Accountant(String name) {
