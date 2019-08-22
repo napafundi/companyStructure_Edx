@@ -2,6 +2,7 @@ public abstract class Employee {
     private String name;
     private double baseSalary;
     private int employeeID;
+    public int bonus = 0;
     private Employee manager;
 
     private static int ID = 0;

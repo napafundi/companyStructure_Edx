@@ -5,6 +5,10 @@ public class TechnicalEmployee extends Employee{
         super(name, baseSalary);
     }
 
+    public TechnicalEmployee(String name, double salaryMultiplier) {
+        super(name, baseSalary * salaryMultiplier);
+    }
+
     public String employeeStatus() {
         return super.employeeStatus();
     }
